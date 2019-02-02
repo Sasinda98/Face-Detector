@@ -59,15 +59,6 @@ class ImageDisplay extends Component {
 
      return faceboxes;
      
-   /*  let top_row = ( Number( regionArray[0].region_info.bounding_box.top_row ) * 100) + '%';
-     let bottom_row = ( (1 - Number( regionArray[0].region_info.bounding_box.bottom_row )) * 100 ) + '%';
-     let left_col = ( Number( regionArray[0].region_info.bounding_box.left_col ) * 100 ) + '%';
-     let right_col = (( 1 - Number( regionArray[0].region_info.bounding_box.right_col )) * 100 ) + '%'; 
-
-      console.log(top_row );
-      console.log(bottom_row );
-      console.log(left_col );
-      console.log(right_col );*/
     }
   }
 

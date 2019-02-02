@@ -58,21 +58,9 @@ class App extends Component {
 
       let results = app.models.predict("a403429f2ddf4b49b307e318f00e528b", imageUrl).then(
       function(response) {
-        // do something with response
-       /*console.log(response.outputs[0]);*/
+   
       let regionArray = response.outputs[0].data.regions;
-     // console.log(regionArr);
 
-/*     let top_row = ( Number( regionArray[0].region_info.bounding_box.top_row ) * 100) + '%';
-     let bottom_row = ( (1 - Number( regionArray[0].region_info.bounding_box.bottom_row )) * 100 ) + '%';
-     let left_col = ( Number( regionArray[0].region_info.bounding_box.left_col ) * 100 ) + '%';
-     let right_col = (( 1 - Number( regionArray[0].region_info.bounding_box.right_col )) * 100 ) + '%'; 
-
-      console.log(top_row );
-      console.log(bottom_row );
-      console.log(left_col );
-      console.log(right_col );*/
-      
      
       return regionArray;
 
@@ -82,8 +70,6 @@ class App extends Component {
       }
     ). then( (regions) => {
           this.setState({regions: regions});
-          //console.log(regions);
-          //console.log('HELLO FRO<<');
     });
        
     }
