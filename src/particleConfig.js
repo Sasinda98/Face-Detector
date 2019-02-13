@@ -8,7 +8,7 @@ particles: {
       }
     },
     color: {
-      value: "#FFBB11"
+      value: "#FFFFFF"
     },
      move: {
       enable: true,
@@ -28,7 +28,7 @@ particles: {
       type: "circle",
       stroke: {
         width: 1.5,
-        color: "#000000"
+        color: "#FFFFFF"
       }
     }
   }
