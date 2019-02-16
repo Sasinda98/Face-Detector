@@ -53,7 +53,7 @@ class SignUp extends Component{
 	}
 
 	onSignUpClick = (event) =>{
-		fetch('http://localhost:3000/signup', 
+		fetch('https://gentle-peak-39635.herokuapp.com/signup', 
 	    	{ 
 		    	method: 'post', 
 		    	headers: {'Content-Type': 'application/json' },

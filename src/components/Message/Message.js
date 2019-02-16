@@ -23,7 +23,7 @@ class Message extends Component {
   }
 
   fetchMessage = (id) => {
-  	const url = 'http://localhost:3000/profile/' + id; 
+  	const url = 'https://gentle-peak-39635.herokuapp.com/profile/' + id; 
 
   	fetch(url)
 	   .then(response => response.json())

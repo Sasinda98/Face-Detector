@@ -9,34 +9,27 @@ import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import SignUp from './components/SignUp/SignUp';
 import SignIn from './components/SignIn/SignIn';
 
-import Clarifai from 'clarifai';
-
-const app = new Clarifai.App({
- apiKey: '2009c3c5b635434c9efb71d0d01712b1'
-});
-
-
-
-class App extends Component {
-  constructor(){
-    super();
-    this.state = {
+const initialState = {
                   imageUrl: '',
                   input: '',
                   regions: [],
                   route: '/signin',
                   signedInId: ''
                 };
+
+class App extends Component {
+  constructor(){
+    super();
+    this.state = initialState;
   }
 
-/*  componentDidMount(){
-    fetch('http://localhost:3000')
-    .then(res => res.json())
-    .then(console.log);
-  }
-*/
   setRoute = (route) => {
-    this.setState({route: route});
+    if(route === '/signout'){
+       this.setState(initialState);
+       return;
+    }else{
+      this.setState({route: route});
+    }
   }
 
   render() {
@@ -86,7 +79,7 @@ class App extends Component {
   }
 
   incrementEntries = (id) => {
-    const url = 'http://localhost:3000/image/submit/' + id; 
+    const url = 'https://gentle-peak-39635.herokuapp.com/image/submit/' + id; 
     fetch(url, { 
           method: 'put', 
           headers: {'Content-Type': 'application/json' },
@@ -104,25 +97,22 @@ class App extends Component {
     console.log('execution of processREGIONS IN ImageDisplay');
     console.log('url passed in as props === ' + imageUrl);
 
-    if( imageUrl.length > 0){
-
-      let results = app.models.predict("a403429f2ddf4b49b307e318f00e528b", imageUrl).then(
-      function(response) {
-   
-      let regionArray = response.outputs[0].data.regions;
-
-     
-      return regionArray;
-
-      },
-      function(err) {
-        // there was an error
-      }
-    ). then( (regions) => {
+    fetch('https://gentle-peak-39635.herokuapp.com/image/process', 
+        { 
+          method: 'post', 
+          headers: {'Content-Type': 'application/json' },
+          body: JSON.stringify({url: imageUrl}) 
+        }
+      )
+      .then(response => response.json())
+      .then(regions => {
+        if(regions === 'error occured'){
+          alert('error occured');
+        }
+        else{
           this.setState({regions: regions});
-    });
-       
-    }
+        }
+      });
 }// end of process region
 
 
