@@ -7,7 +7,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-particles-js": "^2.4.2",
-    "react-scripts": "2.1.3",
+    "react-scripts": "^2.1.5",
     "react-tilt": "^0.1.4",
     "tachyons": "^4.11.1"
   },
@@ -25,5 +25,17 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "This web app detects faces and draws blue rectangles around it. Made for fun and to learn basics of using React, Javascript, Particle.js and Clarifai API etc.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sasinda98/Face-Detector.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sasinda98/Face-Detector/issues"
+  },
+  "homepage": "https://github.com/Sasinda98/Face-Detector#readme"
 }
