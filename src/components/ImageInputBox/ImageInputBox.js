@@ -3,12 +3,12 @@ import Message from '../Message/Message';
 import './form.css'
 
 
-const ImageInputBox = ({onTextInput, onBtnClick}) => {
+const ImageInputBox = ({onTextInput, onBtnClick, signedInId }) => {
     return (
     	
     	<div>
     		<div className="mt3">
-    			<Message signedInId={this.props.signedInId}/>
+    			<Message signedInId={signedInId}/>
     		</div>
 	      <div className="flex justify-center pa3">
 	      	<div className="form pa4 br2 shadow-3 flex-wrap justify-center">

@@ -39,7 +39,7 @@ class App extends Component {
         <div className="App">
           <Navigation isSignedIn={true} route={this.setRoute} />
           <Logo />
-          <ImageInputBox signedInId={this.state.signedInId} onTextInput={this.onTextInput} onBtnClick={this.onDetectBtnClick}/> 
+          <ImageInputBox onTextInput={this.onTextInput} onBtnClick={this.onDetectBtnClick} signedInId={this.state.signedInId}/> 
           <ImageDisplay imageUrl={this.state.imageUrl} regions={this.state.regions}/>
         </div>
       );  

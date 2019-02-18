@@ -5,8 +5,8 @@ class Message extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-					   name: 'name not defined',
-					   entries: 'not defineds'
+					   name: '',
+					   entries: ''
 					 };
 	}
 	componentDidMount(){
@@ -16,7 +16,7 @@ class Message extends Component {
   	
     return (
       <div className="">
-       <p className="f3 washed-blue mv0"> {this.state.name}, you are ranked.... </p> <p className="f2 mv0 washed-blue">  #{this.state.entries} </p>
+       <p className="f3 washed-blue mv0"> {this.state.name}, your current entries are.... </p> <p className="f2 mv0 washed-blue">  #{this.state.entries} </p>
         <p className="f5 mv2">Provide a link to an image to recognize faces.</p>
       </div>
     );
