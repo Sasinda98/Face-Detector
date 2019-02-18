@@ -29,6 +29,7 @@ class SignIn extends Component{
 	    .then(status => {
 	    	if(status.loginStatus === 'successful'){
 	    		this.props.setID(status.ident);
+	    		console.log(status.ident);
 	    		this.props.route('/home');
 	    	}
 	    	else{
