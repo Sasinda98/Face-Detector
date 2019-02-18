@@ -6,11 +6,11 @@ class Message extends Component {
 		super(props);
 		this.state = {
 					   name: 'name not defined',
-					   entries: '0'
+					   entries: 'not defineds'
 					 };
 	}
 	componentDidMount(){
-	this.fetchMessage(17);	
+	this.fetchMessage(this.props.signedInId);	
 	}
   render() {
   	

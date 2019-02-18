@@ -8,7 +8,7 @@ const ImageInputBox = ({onTextInput, onBtnClick}) => {
     	
     	<div>
     		<div className="mt3">
-    			<Message/>
+    			<Message signedInId={this.props.signedInId}/>
     		</div>
 	      <div className="flex justify-center pa3">
 	      	<div className="form pa4 br2 shadow-3 flex-wrap justify-center">
